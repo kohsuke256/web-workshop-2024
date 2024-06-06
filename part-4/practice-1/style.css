@@ -1,0 +1,139 @@
+:root {
+  --school-color: #17288b;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: var(--school-color);
+  color: #ffffff;
+
+  div {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    padding: 1em;
+    place-items: center;
+    gap: 2em;
+
+    h1 {
+      grid-column: 1;
+      margin: 0;
+    }
+
+    nav ul {
+      grid-column: 3;
+      display: flex;
+      list-style: none;
+      gap: 2em;
+      padding: 0;
+    }
+  }
+}
+
+main {
+  --main-padding: 2rem;
+  padding-inline: var(--main-padding);
+  flex-direction: column;
+  
+  .hero {
+    margin-inline: calc(-1 * var(--main-padding));
+
+    img {
+      width: 100%;
+    }
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 2.0rem;
+    color: var(-scool-color);
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
+    gap: 1em;
+    list-style: none;
+    padding: 0;
+    
+    li {
+      padding: 1em;
+      border: 1px solid #cccccc;
+    }
+  }
+
+  #news {
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+
+      li {
+        padding: 1em;
+        color: #ffffff;
+        font-weight: bolder;
+        text-align: center;
+
+        &.color-yellow {
+          background-color: #e8e803;
+          color: #888888;
+        }
+        &.color-red {
+          background-color: #e65100;
+        }
+        &.color-blue {
+          background-color: #25b7c0;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  display: grid;
+  background-color: var(--school-color);
+  color: #ffffff;
+  padding: 1em;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, auto);
+  grid-template-areas: "adress links" "copyright copyright";
+  gap: 1em;
+  align-items: center;
+
+  .address {
+    grid-area: adress;
+    font-style: initial;
+
+    .name {
+      font-size: 2em;
+      font-weight: bolder;
+    }
+  }
+
+  .links {
+    grid-area: links;
+    display: flex;
+    padding: 0;
+    list-style: none;
+    gap: 1em;
+    font-weight: bold;
+
+    a {
+      color: #ffffff!important;
+      text-decoration: none;
+    }
+  }
+
+  .copyright {
+    grid-area: copyright;
+    text-align: center;
+    font-size: inherit;
+  }
+}
