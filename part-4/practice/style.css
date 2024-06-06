@@ -70,26 +70,38 @@ main {
   }
 
   #news {
+    display: grid;
+    place-items: center;
+    
     ul {
-      display: flex;
-      flex-direction: column;
+      display: grid;
       list-style: none;
+      padding: 0;
+      max-width: 64rem;
 
       li {
-        padding: 1em;
+        --color-base: #222222;
+        padding: 1em 2em;
         color: #ffffff;
         font-weight: bolder;
         text-align: center;
+        background-color: var(--color-key);
+        transition: background-color 0.5s;
+        --anim-p: 1em;
 
         &.color-yellow {
-          background-color: #e8e803;
+          --color-key: #e8e803;
           color: #888888;
         }
         &.color-red {
-          background-color: #e65100;
+          --color-key: #e65100;
         }
         &.color-blue {
-          background-color: #25b7c0;
+          --color-key: #25b7c0;
+        }
+
+        &:hover {
+          background-color: var(--color-base);
         }
       }
     }
